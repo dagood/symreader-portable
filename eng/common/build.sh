@@ -298,7 +298,7 @@ function Main {
   ReadJson "$global_json_file" "version"
   dotnet_sdk_version="$readjsonvalue"
 
-  toolset_build_proj="$nuget_package_root/roslyntools.repotoolset/$toolset_version/tools/Build.proj"
+  toolset_build_proj=${RESOLVE_REPO_TOOLSET_PACKAGE_DIR:-"$nuget_package_root/roslyntools.repotoolset/$toolset_version/"}tools/Build.proj
 
   InitializeDotNetCli
   PrepareMachine
